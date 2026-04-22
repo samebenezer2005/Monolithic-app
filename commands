@@ -11,3 +11,27 @@ Invoke-RestMethod -Uri "http://localhost:5000/students" -Method GET
 Invoke-RestMethod -Uri "http://localhost:5000/delete/1" -Method DELETE
 
 👉 (replace 1 with actual student ID)
+
+or
+
+🏠 1. HOME (GET)
+curl http://localhost:5000/
+
+➕ 2. ADD STUDENT (POST)
+curl -X POST http://localhost:5000/add ^
+-H "Content-Type: application/json" ^
+-d "{\"name\":\"Bob\",\"age\":20,\"course\":\"CSE\"}"
+
+👉 (If using Git Bash / Linux / Mac, use this instead)
+
+curl -X POST http://localhost:5000/add \
+-H "Content-Type: application/json" \
+-d '{"name":"Bob","age":20,"course":"CSE"}'
+
+📥 3. GET ALL STUDENTS (GET)
+curl http://localhost:5000/students
+
+❌ 4. DELETE STUDENT (DELETE)
+curl -X DELETE http://localhost:5000/delete/1
+
+👉 (replace 1 with actual student ID)
